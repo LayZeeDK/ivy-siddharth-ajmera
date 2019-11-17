@@ -6,8 +6,8 @@ import {
   ɵrenderComponent as renderComponent,
 } from '@angular/core';
 
+import { appInjector } from './app.injector';
 import { DataService } from './data.service';
-import { rootInjector } from './root.injector';
 
 @Component({
   selector: 'app-root',
@@ -45,7 +45,7 @@ export class AppComponent {
         hostFeatures: [
           LifecycleHooksFeature,
         ],
-        injector: rootInjector,
+        injector: appInjector,
       });
     });
   }

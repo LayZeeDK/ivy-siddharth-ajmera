@@ -4,11 +4,11 @@ import {
 } from '@angular/core';
 
 import { AppComponent } from './app/app.component';
-import { rootInjector } from './app/root.injector';
+import { appInjector } from './app/app.injector';
 
 renderComponent(AppComponent, {
   hostFeatures: [
     LifecycleHooksFeature,
   ],
-  injector: rootInjector,
+  injector: appInjector,
 });

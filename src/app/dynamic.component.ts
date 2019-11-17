@@ -1,4 +1,4 @@
-import { NgForOf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, NgModule, ɵmarkDirty as markDirty } from '@angular/core';
 
 import { DataService } from './data.service';
@@ -37,7 +37,9 @@ export class DynamicComponent {
 @NgModule({
   declarations: [
     DynamicComponent,
-    NgForOf,
+  ],
+  imports: [
+    CommonModule,
   ],
 })
 class DynamicRenderModule {}
