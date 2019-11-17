@@ -1,12 +1,14 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {
+  ɵLifecycleHooksFeature as LifecycleHooksFeature,
+  ɵrenderComponent as renderComponent,
+} from '@angular/core';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import { AppComponent } from './app/app.component';
+import { rootInjector } from './app/root.injector';
 
-if (environment.production) {
-  enableProdMode();
-}
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+renderComponent(AppComponent, {
+  hostFeatures: [
+    LifecycleHooksFeature,
+  ],
+  injector: rootInjector,
+});
